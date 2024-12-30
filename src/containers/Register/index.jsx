@@ -6,7 +6,6 @@ import { api } from "../../services/api";
 
 import { toast } from "react-toastify";
 
-
 import {
 	Container,
 	Form,
@@ -22,11 +21,14 @@ import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import { Button } from "../../components/Button";
 
-export function Login() {
+
+export function Register() {
 	const navigate = useNavigate();
-	
 	const schema = yup
 		.object({
+			name: yup
+			.string()
+			.required('O nome é Obrigatório'),
 			email: yup
 			.string()
 			.email('Digite um e-mail válido')
@@ -35,6 +37,10 @@ export function Login() {
 			.string()
 			.min(6, 'A senha deve ter pelo menos 6 caracteres')
 			.required('Digite uma senha'),
+			confirmPassword: yup
+			.string()
+			.oneOf([yup.ref('password')],'As senhas devem ser iguais')
+			.required('Confirme sua senha'),
 		})
 		.required();
 	
@@ -46,27 +52,30 @@ export function Login() {
 		resolver: yupResolver(schema),
 	});
 	const onSubmit = async (data) => {
-	const response =  await toast.promise(
-		api.post('/session', {
-			email: data.email,
-			password: data.password,
-		}),
-		{
-			pending: 'Verificando os Dados',
-			success: {
-				render(){
-				  setTimeout(() => {
-					navigate('/home')
-				  }, 2000);
-				  return 'Seja Bem-vindo(a) 👌'
-				},
+		try {
+			const { status } = await api.post('/users', {
+				name: data.name,
+				email: data.email,
+				password: data.password,
 			},
-			error: 'Email ou Senha Incorretos 🤯',
-		}
-	);
-	
+			{
+				validateStatus: () => true,
+			});
+			if( status === 200 ||  status === 201){
+				setTimeout(() => {
+					navigate('/login')
+				}, 2000);
+				toast.success("Conta criar com sucesso")
+			}else if(status === 409){
+				toast.error('Email já cadastrado! Faça login para continuar')
+			}else{
+				throw new Error()
+			}
+		} catch (error) {
+			toast.error(" Falha no Sistema! Tente novamente")
 			
-		console.log(response);
+		}
+	
 		
 	};
 
@@ -76,12 +85,14 @@ export function Login() {
 				<img src={Logo} alt="logo-devburger" />
 			</LeftContainer>
 			<RightContainer>
-				<Title>
-					Olá, seja bem vindo ao <span>Dev Burger!</span>
-					<br />
-					Acesse com seu <span>Login e senha.</span>
-				</Title>
+				<Title>Criar Conta</Title>
 				<Form onSubmit={handleSubmit(onSubmit)}>
+				<InputContainer>
+						{/* biome-ignore lint/a11y/noLabelWithoutControl: <explanation> */}
+						<label>Nome</label>
+						<input type="text" {...register("name")} />
+						<p>{errors?.name?.message}</p>
+					</InputContainer>
 					<InputContainer>
 						{/* biome-ignore lint/a11y/noLabelWithoutControl: <explanation> */}
 						<label>Email</label>
@@ -95,11 +106,16 @@ export function Login() {
 						<input type="password" {...register("password")} />
 						<p>{errors?.password?.message}</p>
 					</InputContainer>
-					<Button type="submit">Entrar</Button>
+					<InputContainer>
+						{/* biome-ignore lint/a11y/noLabelWithoutControl: <explanation> */}
+						<label>Confirmar Senha</label>
+						<input type="password" {...register("confirmPassword")} />
+						<p>{errors?.confirmPassword?.message}</p>
+					</InputContainer>
+					<Button type="submit">Criar Conta</Button>
 				</Form>
-				<p>
-					Não possui conta?
-					<Link to="/cadastro">Clique aqui.</Link>
+				<p>Já possui conta?
+					<Link to="/login">Clique aqui.</Link>
 				</p>
 			</RightContainer>
 		</Container>

@@ -7,7 +7,7 @@ import Background from '../../assets/background.png';
 
 export const Container = styled.div`
     display: flex;
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
 
 `;
@@ -55,16 +55,9 @@ export const RightContainer = styled.div`
 `
 
 export const Title = styled.h2`
-  font-family: "Road Rage", serif;
-
-  font-size: 40px;
-  color: #fff;
-
-  span{
-    color: #9758a6;
     font-family: "Road Rage", serif;
-  }
-
+    font-size: 40px;
+    color: #9758a6;
 `
 export const Form = styled.form`
     display: flex;
@@ -101,6 +94,7 @@ export const InputContainer = styled.div`
         color: #cf3057;
         height: 10px;
     }
+
 `
 export const Link = styled(ReactLink)`
     text-decoration: none;
