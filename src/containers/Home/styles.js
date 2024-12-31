@@ -12,7 +12,7 @@ export const Banner = styled.div`
         url('${BannerHome}');
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 50vh;
 
     h1{
         font-family: "Road Rage", serif;
@@ -31,10 +31,17 @@ export const Container = styled.section`
 ), url('${Background}');
     background-size: cover;
     background-position: center;
-    height: 500px;
-    padding-top: 40px; /* Distância extra para o conteúdo */
+    height: 150vh;
+    padding-top: 50px; /* Distância extra para o conteúdo */
     
 
 `;
 
-export const Content = styled.div``;
+export const Content = styled.div`
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    gap: 100px;
+`;
