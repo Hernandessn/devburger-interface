@@ -2,11 +2,29 @@ import styled from "styled-components";
 
 
 export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding-left: 40px;
+    padding-bottom: 40px;
+
     .carousel-item{
         padding-right: 60px;
     }
+    overflow-x: hidden;
 
-    padding-left: 40px;
+    .react-multi-carousel-list{
+        overflow: visible;
+    }
+    .react-multiple-carousel__arrow--left{
+        left: 15px;
+        top: 10px;
+    }
+    .react-multiple-carousel__arrow--right{
+        right: 15px;
+        top: 10px;
+    }
+    
 `;
 
 export const Title = styled.h2`
@@ -29,26 +47,3 @@ export const Title = styled.h2`
     }
 `;
 
-export const ContainerItems = styled.div`
-    background: url('${props => props.imageUrl}');
-    background-position: center;
-    background-size: cover;
-    border-radius: 20px;
-    margin-top: 30px;
-
-    display: flex;
-    align-items: center;
-    padding: 20px 10px;
-    width: 100%;
-    height: 200px;
-
-    p{
-        color: #fff;
-        background-color: rgba(0,0,0,0.5);
-        padding: 10px 30px;
-        border-radius: 30px;
-        font-size: 15.5px;
-        font-weight: bold;
-        margin-top: 50px;
-    }
-`;

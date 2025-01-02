@@ -41,7 +41,6 @@ export function CategoriesCarousel(){
           items: 2,
         }
       };
-
       return (
         <Container>
             <Title>Categorias</Title>

@@ -9,6 +9,16 @@ export const Container = styled.div`
     padding-left: 15px; /* Alinha o início */
     max-width: 100%; /* Garante que o contêiner não seja maior que a tela */
     overflow: hidden; /* Evita estouro visual */
+
+    .react-multiple-carousel__arrow--left{
+        left: 15px;
+        top: 10px;
+    }
+    .react-multiple-carousel__arrow--right{
+        right: 15px;
+        top: 10px;
+    }
+
 `;
 
 
@@ -37,6 +47,7 @@ export const ContainerItems = styled.div`
     background-size: cover;
     border-radius: 20px;
     margin-top: 30px;
+    cursor: grab;
 
     display: flex;
     align-items: center;

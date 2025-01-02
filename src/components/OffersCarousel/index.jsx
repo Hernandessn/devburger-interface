@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
+import {formatPrice} from '../../utils/formatPrice';
 
 import { api } from '../../services/api'
-import { Container, ContainerItems, Title } from './styles';
+import { Container, Title } from './styles';
+import { CardProduct } from '../CardProduct';
 
 export function OffersCarousel(){
     const  [offers ,setOffers] = useState([]);
@@ -14,7 +16,11 @@ export function OffersCarousel(){
             async function loadProducts() {
                 const {data} = await api.get('/products')
 
-                const onlyOffers = data.filter(products => products.offer)
+                const onlyOffers = data
+                .filter(products => products.offer)
+                .map((product) => ({currencyValue: formatPrice(product.price),
+                  ...product,
+                }));
 
                 setOffers(onlyOffers)   
             }
@@ -50,14 +56,9 @@ export function OffersCarousel(){
                 itemClass='carousel-item'
             >
                 {offers.map(product =>(
-                    <ContainerItems
-                     key={product.id} 
-                     imageUrl={product.url}><p>{product.name}</p></ContainerItems>
+                  <CardProduct key={product.id} product={product}/>
                 ))}
                 
-                <ContainerItems>
-
-                </ContainerItems>
             </Carousel>
         </Container>
            
