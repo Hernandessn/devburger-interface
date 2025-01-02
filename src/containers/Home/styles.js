@@ -6,13 +6,13 @@ import Background from '../../assets/background.png';
 export const Banner = styled.div`
     background: 
         linear-gradient(
-            rgba(0, 0, 0, 0.5), /* Máscara preta com 50% de opacidade */
-            rgba(0, 0, 0, 0.5)
+            rgba(0, 0, 0, 0.7), /* Máscara preta com 50% de opacidade */
+            rgba(0, 0, 0, 0.7)
         ),
         url('${BannerHome}');
     background-size: cover;
     background-position: center;
-    height: 50vh;
+    height: 55vh;
 
     h1{
         font-family: "Road Rage", serif;
