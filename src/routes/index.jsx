@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
         element: <Home />,
     },
     {
-        path: '/cartapio',
+        path: '/cardapio',
         element: <Menu />,
     },
 ]);
