@@ -9,6 +9,8 @@ export const Container = styled.div`
      background-size: cover;
      background-position: center;
      height: 200vh;
+
+
     
 `;
 
@@ -77,4 +79,23 @@ export const ProductsContainer = styled.div`
     gap: 60px;
     margin: 50px auto;
 
+`;
+
+export const ButtonHome = styled.button`
+    margin-left: 40%;
+     width: 20%;
+    height: 52px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #9758a6;
+
+    font-family: "Road Rage", serif;
+    font-size: 30px;
+    color: #fff;
+
+    &:hover{
+        background-color: #6f3576;
+       
+        border-radius: 5px;
+    }
 `;

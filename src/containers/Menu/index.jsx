@@ -1,19 +1,37 @@
 import { useEffect, useState } from "react";
-import { Banner, CategoryButton, CategoryMenu, Container, ProductsContainer } from "./styles";
+import { Banner, ButtonHome, CategoryButton, CategoryMenu, Container, ProductsContainer } from "./styles";
 import { api } from "../../services/api";
 import { formatPrice } from "../../utils/formatPrice";
 import { CardProduct } from "../../components/CardProduct";
 
-import { useNavigate } from "react-router-dom";
+
+
+import { useLocation, useNavigate } from "react-router-dom";
 
 export function Menu() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [activeCategory, setActiveCategories] = useState(0)
+
 
   const navigate = useNavigate();
 
+  const {search} = useLocation();
+
+  const queryParams = new URLSearchParams(search);
+
+ 
+
+  const [activeCategory, setActiveCategories] = useState(()=>{
+    const categoryId = +queryParams.get('categoria')
+
+    if(categoryId){
+      return categoryId
+    }
+    return 0
+  });
+ 
+  
   // Carrega as categorias
   useEffect(() => {
     async function loadCategories() {
@@ -99,6 +117,11 @@ export function Menu() {
           <CardProduct product={product} key={product.id} />
         ))}
       </ProductsContainer>
+      <ButtonHome onClick={()=>{
+       setTimeout(() => {
+        navigate('/home')
+       }, 2000);
+      }}>Voltar</ButtonHome>
     </Container>
   );
 }
