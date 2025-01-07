@@ -19,7 +19,7 @@ import {
 
 export function Header() {
     const navigate = useNavigate();
-    const { logout, useInfo} = useUser
+    const { logout, useInfo} = useUser ();
 
     const { pathname } = useResolvedPath();
 
