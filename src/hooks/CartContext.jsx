@@ -83,7 +83,7 @@ export const CartProvider = ({ children }) => {
 			value={{
 				cartProducts,
 				putProductInCart,
-				clearCart, // Agora a função clearCart está sendo fornecida
+				clearCart, 
 				decreaseProduct,
 				increaseProduct,
 				deleteProduct,
