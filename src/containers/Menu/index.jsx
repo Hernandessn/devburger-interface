@@ -7,6 +7,8 @@ import { CardProduct } from "../../components/CardProduct";
 
 
 import { useLocation, useNavigate } from "react-router-dom";
+import { ArrowLeft } from "@phosphor-icons/react";
+import { Footer } from "../../components/Footer";
 
 export function Menu() {
   const [categories, setCategories] = useState([]);
@@ -92,6 +94,11 @@ export function Menu() {
       </Banner>
 
       <CategoryMenu>
+       <ButtonHome onClick={()=>{
+        navigate('/home')
+      }}>
+      <ArrowLeft />
+      </ButtonHome>
         {categories.map(category => (
           <CategoryButton 
           key={category.id}
@@ -117,11 +124,7 @@ export function Menu() {
           <CardProduct product={product} key={product.id} />
         ))}
       </ProductsContainer>
-      <ButtonHome onClick={()=>{
-       setTimeout(() => {
-        navigate('/home')
-       }, 2000);
-      }}>Voltar</ButtonHome>
+     <Footer />
     </Container>
   );
 }

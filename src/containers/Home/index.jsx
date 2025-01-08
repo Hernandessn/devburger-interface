@@ -1,7 +1,5 @@
-import { CategoriesCarousel } from "../../components/CategoriesCarousel";
-import { OffersCarousel } from "../../components/OffersCarousel";
 import { Banner, Container} from "./styles";
-import { useUser } from "../../hooks/UserContext";
+import { Footer, CategoriesCarousel, OffersCarousel } from "../../components";
 
 export function Home(){
     return (
@@ -16,6 +14,7 @@ export function Home(){
                 </div>
                 
             </Container>
+            <Footer />
         </main>
     )
 }

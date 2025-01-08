@@ -20,6 +20,7 @@ import { useNavigate } from "react-router-dom";
 
 import Logo from "../../assets/logo.png";
 import { Button } from "../../components/Button";
+import { Footer } from "../../components/Footer";
 
 
 export function Register() {
@@ -80,6 +81,7 @@ export function Register() {
 	};
 
 	return (
+		<div>
 		<Container>
 			<LeftContainer>
 				<img src={Logo} alt="logo-devburger" />
@@ -119,5 +121,7 @@ export function Register() {
 				</p>
 			</RightContainer>
 		</Container>
+		<Footer />
+		</div>
 	);
 }

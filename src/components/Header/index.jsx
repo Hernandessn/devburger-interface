@@ -19,9 +19,10 @@ import {
 
 export function Header() {
     const navigate = useNavigate();
-    const { logout, useInfo} = useUser ();
+    const { logout, userInfo} = useUser ();
 
     const { pathname } = useResolvedPath();
+
 
 
     //Função para deslogar o usuário
@@ -51,7 +52,7 @@ export function Header() {
                         <UserCircle color="#fff" siza={24}/>
 						<div>
 							<p>
-								Olá, <span>Hernandes</span>
+								Olá, <span>{userInfo.name}</span>
 							</p>
 						</div>
 

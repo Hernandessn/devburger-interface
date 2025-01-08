@@ -4,11 +4,17 @@ import Background from '../../assets/background.png';
 import { Link } from "react-router-dom";
 
 export const Container = styled.div` 
-   background: 
-         url('${Background}');
-     background-size: cover;
-     background-position: center;
-     height: 200vh;
+background: linear-gradient(
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5)
+), url('${Background}');
+background-size: cover;
+background-position: center top; /* Coloca a imagem mais para cima */
+background-attachment: fixed; /* Fixar a imagem de fundo enquanto rola */
+height: 350vh;
+
+
+
 
 
     
@@ -82,14 +88,18 @@ export const ProductsContainer = styled.div`
 `;
 
 export const ButtonHome = styled.button`
-    margin-left: 40%;
-     width: 20%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 150px;
+    bottom: -5px;
+    width: 5%;
     height: 52px;
     border: 0;
     border-radius: 5px;
     background-color: #9758a6;
 
-    font-family: "Road Rage", serif;
     font-size: 30px;
     color: #fff;
 

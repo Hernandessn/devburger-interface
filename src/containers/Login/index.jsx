@@ -16,6 +16,7 @@ import {
 	Title,
 	Link,
 } from "./styles";
+import { Footer } from "../../components/Footer";
 
 
 
@@ -70,7 +71,9 @@ export function Login() {
 	};
 
 	return (
+	<div>
 		<Container>
+			
 			<LeftContainer>
 				<img src={Logo} alt="logo-devburger" />
 			</LeftContainer>
@@ -101,6 +104,10 @@ export function Login() {
 					<Link to="/cadastro">Clique aqui.</Link>
 				</p>
 			</RightContainer>
+			
+		
 		</Container>
+			<Footer />
+		</div>
 	);
 }

@@ -25,14 +25,16 @@ export const Banner = styled.div`
 `;
 
 export const Container = styled.section`
-    background: linear-gradient(
+background: linear-gradient(
     rgba(255, 255, 255, 0.5),
     rgba(255, 255, 255, 0.5)
 ), url('${Background}');
-    background-size: cover;
-    background-position: center;
-    height: 150vh;
-    padding-top: 50px; /* Distância extra para o conteúdo */
+background-size: cover;
+background-position: center top; /* Coloca a imagem mais para cima */
+background-attachment: fixed; /* Fixar a imagem de fundo enquanto rola */
+height: 150vh;
+
+
     
 
 `;
