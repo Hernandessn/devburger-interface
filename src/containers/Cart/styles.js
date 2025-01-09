@@ -4,12 +4,13 @@ import Texture from '../../assets/background-login.jpg';
 
 export const Container =  styled.div`
  background: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
-    ), url('${Background}');
-    width: 100%;
-    background-color: #f0f0f0;
-    min-height: 100vh;
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5)
+), url('${Background}');
+background-size: cover;
+background-position: center top; /* Coloca a imagem mais para cima */
+background-attachment: fixed; /* Fixar a imagem de fundo enquanto rola */
+height: 150vh;
 
 `;
 

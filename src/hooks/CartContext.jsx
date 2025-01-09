@@ -50,7 +50,7 @@ export const CartProvider = ({ children }) => {
 
 	const decreaseProduct = (productId) => {
 		// Implementação para diminuir a quantidade de um produto
-		const cartIndex = cartProducts.findIndex((prd) => prd.id === productId.id);
+		const cartIndex = cartProducts.findIndex((prd) => prd.id === productId);
 
 		if (cartProducts[cartIndex].quantity > 1) {
 			const newCart = cartProducts.map((prd) => {
