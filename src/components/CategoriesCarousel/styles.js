@@ -26,7 +26,7 @@ export const Container = styled.div`
 export const Title = styled.h2`
     font-size: 32px;
     font-weight: 800;
-    color: #9758a6;
+    color: ${(props) => props.theme.purple};
     padding-bottom: 12px;
     position: relative;
     text-align: center;
@@ -37,7 +37,7 @@ export const Title = styled.h2`
         width: 56px;
         bottom: 0;
         height: 4px;
-        background-color: #9758a6;
+        background-color: ${(props) => props.theme.purple};
         left: calc(50% - 28px);
     }
 `;
@@ -70,7 +70,7 @@ export const CategoryButton = styled(Link)`
         text-decoration: none;
 
         &:hover{
-            background-color: #9758a6;
+            background-color: ${(props) => props.theme.purple};
         }
 
 `;
