@@ -8,12 +8,17 @@ import GlobalStyles from './styles/globalStyles';
 import { ToastContainer } from 'react-toastify';
 import AppProvider from './hooks';
 
+import { Elements } from '@stripe/react-stripe-js';
+import stripePromise from './config/stripeConfig';
+
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AppProvider>
+    <Elements stripe={stripePromise}>
     <RouterProvider router={router}/>
+    </Elements>
     <GlobalStyles />
     <ToastContainer autoClose={3000}/>
     </AppProvider>
