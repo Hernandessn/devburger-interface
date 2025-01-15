@@ -1,11 +1,11 @@
 
 
-export function Admin(){
 
+export function SideNavAdmin(){
 
     return(
         <div>
-            <h2>Admin</h2>
+            Menu
         </div>
     )
 }
