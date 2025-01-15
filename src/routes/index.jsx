@@ -1,9 +1,9 @@
 import { createBrowserRouter, Route, Routes } from "react-router-dom";
 
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { Login,Register,Home,Menu,Cart, Checkout, CompletePayment  } from "../containers";
-import { UserLayout } from "../layouts/UserLayout";
+
+import { Login,Register,Home,Menu,Cart, Checkout, CompletePayment, Admin  } from "../containers";
+import { UserLayout, AdminLayout} from "../layouts";
+
 
 
 export function Router(){
@@ -17,6 +17,10 @@ export function Router(){
                 <Route path="/carrinho" element={ <Cart /> }/>
                 <Route path="/checkout" element={ <Checkout /> }/>      
                 <Route path="/complete" element={ <CompletePayment /> }/>
+            </Route>
+
+            <Route path="/admin" element={<AdminLayout />}>
+                <Route path="/admin/home" element={<Admin />}/>
             </Route>
 
             <Route path="/login" element={ <Login /> }/>
