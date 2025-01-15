@@ -42,7 +42,7 @@ export function Orders() {
         return {
           name: order.user.name,
           orderId: order._id,
-          data: order.createdAt,
+          date: order.createdAt,
           status: order.status,
           products: order.products,
         };
