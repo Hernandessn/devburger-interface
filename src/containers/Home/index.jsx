@@ -14,7 +14,6 @@ export function Home(){
                 </div>
                 
             </Container>
-            <Footer />
         </main>
     )
 }

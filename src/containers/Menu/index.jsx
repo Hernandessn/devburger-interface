@@ -124,7 +124,6 @@ export function Menu() {
           <CardProduct product={product} key={product.id} />
         ))}
       </ProductsContainer>
-     <Footer />
     </Container>
   );
 }
