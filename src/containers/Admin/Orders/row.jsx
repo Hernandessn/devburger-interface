@@ -20,12 +20,31 @@ import { api } from '../../../services/api';
 
 
 
-export function Row(props) {
-    const { row } = props;
+export function Row({row, setOrders, orders}) {
+
+    const [loading, setLoading] = useState(false);
+
     const [open, setOpen] = useState(false);
 
     async function newStatusOrder() {
-      await api.put(`orders/${id}`, { status })
+
+      try{
+        setLoading(true)
+        await api.put(`orders/${id}`, { status });
+
+        const newOrders = orders.map
+        ( order => order._id === id ? {...order, status} : order,
+        );
+
+        setOrders(newOrders);
+      }catch(err){
+        console.error(err);
+        
+      }
+      finally{
+        setLoading(false)
+      }
+      
     }
   
     return (
@@ -53,6 +72,8 @@ export function Row(props) {
               status => status.value === row.status || null,
             )}
             onChange={ status => newStatusOrder(row.orderId, status.value)}
+            isLoading={loading}
+            menuPortalTarget={document.body}
             />
           </TableCell>
         </TableRow>
@@ -96,6 +117,8 @@ export function Row(props) {
   }
   
   Row.propTypes = {
+    orders: PropTypes.array.isRequired,
+    setOrders: PropTypes.func.isRequired,
     row: PropTypes.shape({
       orderId: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
