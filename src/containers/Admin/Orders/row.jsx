@@ -46,7 +46,8 @@ export function Row({row, setOrders, orders}) {
       }
       
     }
-  
+    console.log(row.products);
+
     return (
       <Fragment>
         <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
