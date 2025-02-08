@@ -1,5 +1,9 @@
-
-
+<img src="https://github.com/Hernandessn/devburger-interface/blob/main/Imgs%20devbugrer/1.png?raw=true" alt="Imagem do projeto"/>
+<img src="https://github.com/Hernandessn/devburger-interface/blob/main/Imgs%20devbugrer/2.png?raw=true" alt="Imagem do projeto"/>
+<img src="https://github.com/Hernandessn/devburger-interface/blob/main/Imgs%20devbugrer/3.png?raw=true" alt="Imagem do projeto"/>
+<img src="https://github.com/Hernandessn/devburger-interface/blob/main/Imgs%20devbugrer/4.png?raw=true" alt="Imagem do projeto"/>
+<img src="https://github.com/Hernandessn/devburger-interface/blob/main/Imgs%20devbugrer/5.png?raw=true" alt="Imagem do projeto"/>
+<img src="https://github.com/Hernandessn/devburger-interface/blob/main/Imgs%20devbugrer/6.png?raw=true" alt="Imagem do projeto"/>
 ---
 
 ## DevBurger - Front-End 🍔💻
@@ -42,5 +46,7 @@ Este repositório contém a interface do site **DevBurger**, um projeto para uma
    ```bash
    npm run dev
    ```
+## API
 
+Confira a api <a href="https://github.com/Hernandessn/devburger-api.git">devburger-api</a>
 
