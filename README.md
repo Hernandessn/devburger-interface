@@ -31,16 +31,16 @@ Este repositório contém a interface do site **DevBurger**, um projeto para uma
 
 1. **Clone o Repositório**  
    ```bash
-   git clone https://github.com/seu-usuario/devburger-frontend.git
+   git clone https://github.com/Hernandessn/devburger-interface.git
    ```
 2. **Instale as Dependências**  
    ```bash
-   cd devburger-frontend
+   cd devburger-interface
    npm install
    ```
 3. **Inicie o Projeto**  
    ```bash
-   npm start
+   npm run dev
    ```
 
 
